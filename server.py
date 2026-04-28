@@ -48,7 +48,7 @@ class ChatServer:
                 break
     
     def _handle_client(self, client_sock: socket.socket, addr: Tuple[str, int]):
-        with self.lock():
+        with self.lock:
             self.clients[client_sock] = addr
 
         try:
